@@ -1,10 +1,9 @@
 package com.project.SQLandAPI.Model.Insert;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class HuongDan {
+public class Compilation {
 
     @SerializedName("masv")
     @Expose
@@ -61,7 +60,7 @@ public class HuongDan {
                 '}';
     }
 
-    public HuongDan(Integer masv, String madt, Integer magv, Double ketqua) {
+    public Compilation(Integer masv, String madt, Integer magv, Double ketqua) {
         this.masv = masv;
         this.madt = madt;
         this.magv = magv;

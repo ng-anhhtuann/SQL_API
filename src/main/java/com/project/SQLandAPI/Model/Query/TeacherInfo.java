@@ -3,7 +3,7 @@ package com.project.SQLandAPI.Model.Query;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class GiangVienInfo {
+public class TeacherInfo {
     @Override
     public String toString() {
         return "GiangVienInfo{" +
@@ -13,7 +13,7 @@ public class GiangVienInfo {
                 '}';
     }
 
-    public GiangVienInfo(Integer magv, String hotengv, String tenkhoa) {
+    public TeacherInfo(Integer magv, String hotengv, String tenkhoa) {
         this.magv = magv;
         this.hotengv = hotengv;
         this.tenkhoa = tenkhoa;

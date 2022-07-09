@@ -3,7 +3,7 @@ package com.project.SQLandAPI.Model.Query;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CountTenKhoa {
+public class CountFacultyName {
     @SerializedName("tenkhoa")
     @Expose
     private String tenkhoa;
@@ -27,7 +27,7 @@ public class CountTenKhoa {
         this.soluongsv = soluongsv;
     }
 
-    public CountTenKhoa(String tenkhoa, Integer soluongsv) {
+    public CountFacultyName(String tenkhoa, Integer soluongsv) {
         this.tenkhoa = tenkhoa;
         this.soluongsv = soluongsv;
     }

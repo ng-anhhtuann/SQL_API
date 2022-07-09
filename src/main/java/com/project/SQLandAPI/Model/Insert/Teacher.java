@@ -3,7 +3,7 @@ package com.project.SQLandAPI.Model.Insert;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class GiangVien {
+public class Teacher {
     @SerializedName("magv")
     @Expose
     private Integer magv;
@@ -59,7 +59,7 @@ public class GiangVien {
                 '}';
     }
 
-    public GiangVien(Integer magv, String hotengv, Double luong, String makhoa) {
+    public Teacher(Integer magv, String hotengv, Double luong, String makhoa) {
         this.magv = magv;
         this.hotengv = hotengv;
         this.luong = luong;

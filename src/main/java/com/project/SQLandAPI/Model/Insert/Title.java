@@ -1,10 +1,9 @@
 package com.project.SQLandAPI.Model.Insert;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DeTai {
+public class Title {
     @SerializedName("madt")
     @Expose
     private String madt;
@@ -60,7 +59,7 @@ public class DeTai {
                 '}';
     }
 
-    public DeTai(String madt, String tendt, Integer kinhphi, String noithuctap) {
+    public Title(String madt, String tendt, Integer kinhphi, String noithuctap) {
         this.madt = madt;
         this.tendt = tendt;
         this.kinhphi = kinhphi;

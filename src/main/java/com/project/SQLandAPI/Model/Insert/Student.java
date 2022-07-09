@@ -1,10 +1,9 @@
 package com.project.SQLandAPI.Model.Insert;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SinhVien {
+public class Student {
 
     @SerializedName("masv")
     @Expose
@@ -73,7 +72,7 @@ public class SinhVien {
                 '}';
     }
 
-    public SinhVien(Integer masv, String hotensv, String makhoa, Integer namsinh, String quequan) {
+    public Student(Integer masv, String hotensv, String makhoa, Integer namsinh, String quequan) {
         this.masv = masv;
         this.hotensv = hotensv;
         this.makhoa = makhoa;

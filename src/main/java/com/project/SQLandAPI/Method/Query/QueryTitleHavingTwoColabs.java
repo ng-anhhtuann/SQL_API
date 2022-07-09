@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 @RestController
 @RequestMapping(value = "getDetaiHavingTwoColab")
-public class QueryDetaiInfoHavingTwoColab {
+public class QueryTitleHavingTwoColabs {
     @GetMapping
     public static Object getGiangVienInfoHelpingThree() throws SQLException {
         Repository repository = Repository.getRepository();

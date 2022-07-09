@@ -3,7 +3,7 @@ package com.project.SQLandAPI.Model.Query;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DeTaiMaxKinhPhi {
+public class MaxWorthTitle {
     @Override
     public String toString() {
         return "DeTaiMaxKinhPhi{" +
@@ -35,7 +35,7 @@ public class DeTaiMaxKinhPhi {
         this.tendt = tendt;
     }
 
-    public DeTaiMaxKinhPhi(String madt, String tendt) {
+    public MaxWorthTitle(String madt, String tendt) {
         this.madt = madt;
         this.tendt = tendt;
     }

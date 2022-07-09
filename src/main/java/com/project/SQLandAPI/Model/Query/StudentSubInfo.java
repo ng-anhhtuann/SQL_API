@@ -3,29 +3,23 @@ package com.project.SQLandAPI.Model.Query;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class MaTenDiem {
+public class StudentSubInfo {
     @SerializedName("masv")
     @Expose
     private Integer masv;
     @SerializedName("hotensv")
     @Expose
     private String hotensv;
-    @SerializedName("ketqua")
+    @SerializedName("tuoi")
     @Expose
-    private Double ketqua;
-
-    public MaTenDiem(Integer masv, String hotensv, Double ketqua) {
-        this.masv = masv;
-        this.hotensv = hotensv;
-        this.ketqua = ketqua;
-    }
+    private Integer tuoi;
 
     @Override
     public String toString() {
-        return "MaTenDiem{" +
+        return "SubSinhVienInfo{" +
                 "masv=" + masv +
                 ", hotensv='" + hotensv + '\'' +
-                ", ketqua=" + ketqua +
+                ", tuoi=" + tuoi +
                 '}';
     }
 
@@ -45,11 +39,17 @@ public class MaTenDiem {
         this.hotensv = hotensv;
     }
 
-    public Double getKetqua() {
-        return ketqua;
+    public Integer getTuoi() {
+        return tuoi;
     }
 
-    public void setKetqua(Double ketqua) {
-        this.ketqua = ketqua;
+    public void setTuoi(Integer tuoi) {
+        this.tuoi = tuoi;
+    }
+
+    public StudentSubInfo(Integer masv, String hotensv, Integer tuoi) {
+        this.masv = masv;
+        this.hotensv = hotensv;
+        this.tuoi = tuoi;
     }
 }

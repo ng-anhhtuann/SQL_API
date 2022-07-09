@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 @RestController
 @RequestMapping(value = "getCountTenKhoa")
-public class QueryCountTenKhoa {
+public class QueryCountFacultyName {
     @GetMapping
     public static Object getCountTenKhoa() throws SQLException {
         Repository repository = Repository.getRepository();

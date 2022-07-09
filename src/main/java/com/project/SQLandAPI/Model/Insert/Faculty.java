@@ -2,7 +2,7 @@ package com.project.SQLandAPI.Model.Insert;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Khoa {
+public class Faculty {
     @SerializedName("makhoa")
     @Expose
     private String makhoa;
@@ -46,7 +46,7 @@ public class Khoa {
                 '}';
     }
 
-    public Khoa(String makhoa, String tenkhoa, String dienthoai) {
+    public Faculty(String makhoa, String tenkhoa, String dienthoai) {
         this.makhoa = makhoa;
         this.tenkhoa = tenkhoa;
         this.dienthoai = dienthoai;

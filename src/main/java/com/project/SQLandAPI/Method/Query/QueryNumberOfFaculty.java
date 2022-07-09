@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.SQLException;
 
 @RestController
-@RequestMapping(value = "getMaxKinhPhi")
-public class QueryMaxKinhPhi {
+@RequestMapping(value = "getNumberFromInstantName")
+public class QueryNumberOfFaculty {
     @GetMapping
-    public static Object getGiangVienInfo() throws SQLException {
+    public static Object getNumberFromName() throws SQLException {
         Repository repository = Repository.getRepository();
-        return repository.queryMaxKinhPhiInfo();
+        return repository.getNumber();
     }
 }

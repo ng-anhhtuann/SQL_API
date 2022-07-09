@@ -3,7 +3,7 @@ package com.project.SQLandAPI.Model.Query;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DetaiTwoColab {
+public class TwoColabTitle {
 
     @SerializedName("madt")
     @Expose
@@ -17,7 +17,7 @@ public class DetaiTwoColab {
                 '}';
     }
 
-    public DetaiTwoColab(Integer madt, String tendt) {
+    public TwoColabTitle(Integer madt, String tendt) {
         this.madt = madt;
         this.tendt = tendt;
     }
