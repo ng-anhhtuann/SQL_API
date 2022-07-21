@@ -1,4 +1,4 @@
-package com.project.SQLandAPI.Method.InsertData;
+package com.project.SQLandAPI.Controller.Insert;
 
 import com.project.SQLandAPI.Model.Insert.Teacher;
 import com.project.SQLandAPI.Repository.Repository;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.SQLException;
 
 @RestController
-@RequestMapping(value = "insertGiangVien")
+@RequestMapping(value = "insertTeacher")
 public class InsertTeacher {
     @PostMapping
-    public static Object insertGiangVien(@RequestBody Teacher teacher) throws SQLException {
+    public static Object insert(@RequestBody Teacher teacher) throws SQLException {
         Repository repository = Repository.getRepository();
         return repository.insert(teacher);
     }

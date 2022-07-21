@@ -4,65 +4,65 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Title {
-    @SerializedName("madt")
+    @SerializedName("idTitle")
     @Expose
-    private String madt;
-    @SerializedName("tendt")
+    private String idTitle;
+    @SerializedName("nameTitle")
     @Expose
-    private String tendt;
-    @SerializedName("kinhphi")
+    private String nameTitle;
+    @SerializedName("feeTitle")
     @Expose
-    private Integer kinhphi;
-    @SerializedName("noithuctap")
+    private Integer feeTitle;
+    @SerializedName("siteTilte")
     @Expose
-    private String noithuctap;
+    private String siteTilte;
 
-    public String getMadt() {
-        return madt;
+    public String getIdTitle() {
+        return idTitle;
     }
 
-    public void setMadt(String madt) {
-        this.madt = madt;
+    public void setIdTitle(String idTitle) {
+        this.idTitle = idTitle;
     }
 
-    public String getTendt() {
-        return tendt;
+    public String getNameTitle() {
+        return nameTitle;
     }
 
-    public void setTendt(String tendt) {
-        this.tendt = tendt;
+    public void setNameTitle(String nameTitle) {
+        this.nameTitle = nameTitle;
     }
 
-    public Integer getKinhphi() {
-        return kinhphi;
+    public Integer getFeeTitle() {
+        return feeTitle;
     }
 
-    public void setKinhphi(Integer kinhphi) {
-        this.kinhphi = kinhphi;
+    public void setFeeTitle(Integer feeTitle) {
+        this.feeTitle = feeTitle;
     }
 
-    public String getNoithuctap() {
-        return noithuctap;
+    public String getSiteTitle() {
+        return siteTilte;
     }
 
-    public void setNoithuctap(String noithuctap) {
-        this.noithuctap = noithuctap;
+    public void setSiteTitle(String siteTitle) {
+        this.siteTilte = siteTilte;
     }
 
     @Override
     public String toString() {
         return "DeTai{" +
-                "madt='" + madt + '\'' +
-                ", tendt='" + tendt + '\'' +
-                ", kinhphi=" + kinhphi +
-                ", noithuctap='" + noithuctap + '\'' +
+                "idTitle='" + idTitle + '\'' +
+                ", nameTitle='" + nameTitle + '\'' +
+                ", feeTilte=" + feeTitle +
+                ", siteTilte='" + siteTilte + '\'' +
                 '}';
     }
 
-    public Title(String madt, String tendt, Integer kinhphi, String noithuctap) {
-        this.madt = madt;
-        this.tendt = tendt;
-        this.kinhphi = kinhphi;
-        this.noithuctap = noithuctap;
+    public Title(String idTitle, String nameTitle, Integer feeTilte, String siteTilte) {
+        this.idTitle = idTitle;
+        this.nameTitle = nameTitle;
+        this.feeTitle = feeTilte;
+        this.siteTilte = siteTilte;
     }
 }

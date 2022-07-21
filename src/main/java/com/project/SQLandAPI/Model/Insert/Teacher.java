@@ -4,65 +4,65 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Teacher {
-    @SerializedName("magv")
+    @SerializedName("idTeacher")
     @Expose
-    private Integer magv;
-    @SerializedName("hotengv")
+    private Integer idTeacher;
+    @SerializedName("nameTeacher")
     @Expose
-    private String hotengv;
-    @SerializedName("luong")
+    private String nameTeacher;
+    @SerializedName("salaryTeacher")
     @Expose
-    private Double luong;
-    @SerializedName("makhoa")
+    private Double salaryTeacher;
+    @SerializedName("idFaculty")
     @Expose
-    private String makhoa;
+    private String idFaculty;
 
-    public Integer getMagv() {
-        return magv;
+    public Integer getIdTeacher() {
+        return idTeacher;
     }
 
-    public void setMagv(Integer magv) {
-        this.magv = magv;
+    public void setIdTeacher(Integer idTeacher) {
+        this.idTeacher = idTeacher;
     }
 
-    public String getHotengv() {
-        return hotengv;
+    public String getNameTeacher() {
+        return nameTeacher;
     }
 
-    public void setHotengv(String hotengv) {
-        this.hotengv = hotengv;
+    public void setNameTeacher(String nameTeacher) {
+        this.nameTeacher = nameTeacher;
     }
 
-    public Double getLuong() {
-        return luong;
+    public Double getSalaryTeacher() {
+        return salaryTeacher;
     }
 
-    public void setLuong(Double luong) {
-        this.luong = luong;
+    public void setSalaryTeacher(Double salaryTeacher) {
+        this.salaryTeacher = salaryTeacher;
     }
 
-    public String getMakhoa() {
-        return makhoa;
+    public String getIdFaculty() {
+        return idFaculty;
     }
 
-    public void setMakhoa(String makhoa) {
-        this.makhoa = makhoa;
+    public void setIdFaculty(String idFaculty) {
+        this.idFaculty = idFaculty;
     }
 
     @Override
     public String toString() {
         return "GiangVien{" +
-                "magv=" + magv +
-                ", hotengv='" + hotengv + '\'' +
-                ", luong=" + luong +
-                ", makhoa='" + makhoa + '\'' +
+                "idTeacher=" + idTeacher +
+                ", nameTeacher='" + nameTeacher + '\'' +
+                ", salaryTeacher=" + salaryTeacher +
+                ", idFaculty='" + idFaculty + '\'' +
                 '}';
     }
 
-    public Teacher(Integer magv, String hotengv, Double luong, String makhoa) {
-        this.magv = magv;
-        this.hotengv = hotengv;
-        this.luong = luong;
-        this.makhoa = makhoa;
+    public Teacher(Integer idTeacher, String nameTeacher, Double salaryTeacher, String idFaculty) {
+        this.idTeacher = idTeacher;
+        this.nameTeacher = nameTeacher;
+        this.salaryTeacher = salaryTeacher;
+        this.idFaculty = idFaculty;
     }
 }

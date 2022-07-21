@@ -4,52 +4,52 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class StudentIdNamePoint {
-    @SerializedName("masv")
+    @SerializedName("idStudent")
     @Expose
-    private Integer masv;
-    @SerializedName("hotensv")
+    private Integer idStudent;
+    @SerializedName("nameStudent")
     @Expose
-    private String hotensv;
-    @SerializedName("ketqua")
+    private String nameStudent;
+    @SerializedName("result")
     @Expose
-    private Double ketqua;
+    private Double result;
 
-    public StudentIdNamePoint(Integer masv, String hotensv, Double ketqua) {
-        this.masv = masv;
-        this.hotensv = hotensv;
-        this.ketqua = ketqua;
+    public StudentIdNamePoint(Integer idStudent, String nameStudent, Double result) {
+        this.idStudent = idStudent;
+        this.nameStudent = nameStudent;
+        this.result = result;
     }
 
     @Override
     public String toString() {
-        return "MaTenDiem{" +
-                "masv=" + masv +
-                ", hotensv='" + hotensv + '\'' +
-                ", ketqua=" + ketqua +
+        return "{" +
+                "idStudent=" + idStudent +
+                ", nameStudent='" + nameStudent + '\'' +
+                ", result=" + result +
                 '}';
     }
 
-    public Integer getMasv() {
-        return masv;
+    public Integer getIdStudent() {
+        return idStudent;
     }
 
-    public void setMasv(Integer masv) {
-        this.masv = masv;
+    public void setIdStudent(Integer idStudent) {
+        this.idStudent = idStudent;
     }
 
-    public String getHotensv() {
-        return hotensv;
+    public String getNameStudent() {
+        return nameStudent;
     }
 
-    public void setHotensv(String hotensv) {
-        this.hotensv = hotensv;
+    public void setNameStudent(String nameStudent) {
+        this.nameStudent = nameStudent;
     }
 
-    public Double getKetqua() {
-        return ketqua;
+    public Double getResult() {
+        return result;
     }
 
-    public void setKetqua(Double ketqua) {
-        this.ketqua = ketqua;
+    public void setResult(Double result) {
+        this.result = result;
     }
 }

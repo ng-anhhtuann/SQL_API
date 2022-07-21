@@ -6,51 +6,50 @@ import com.google.gson.annotations.SerializedName;
 public class TeacherInfo {
     @Override
     public String toString() {
-        return "GiangVienInfo{" +
-                "magv=" + magv +
-                ", hotengv='" + hotengv + '\'' +
-                ", tenkhoa='" + tenkhoa + '\'' +
+        return "{" +
+                "idTeacher=" + idTeacher +
+                ", nameTeacher='" + nameTeacher + '\'' +
+                ", nameFaculty='" + nameFaculty + '\'' +
                 '}';
     }
 
-    public TeacherInfo(Integer magv, String hotengv, String tenkhoa) {
-        this.magv = magv;
-        this.hotengv = hotengv;
-        this.tenkhoa = tenkhoa;
+    public TeacherInfo(Integer idTeacher, String nameTeacher, String nameFaculty) {
+        this.idTeacher = idTeacher;
+        this.nameTeacher = nameTeacher;
+        this.nameFaculty = nameFaculty;
     }
 
-    @SerializedName("magv")
+    @SerializedName("idTeacher")
     @Expose
-    private Integer magv;
-    @SerializedName("hotengv")
+    private Integer idTeacher;
+    @SerializedName("nameTeacher")
     @Expose
-    private String hotengv;
-    @SerializedName("tenkhoa")
+    private String nameTeacher;
+    @SerializedName("nameFaculty")
     @Expose
-    private String tenkhoa;
+    private String nameFaculty;
 
-    public Integer getMagv() {
-        return magv;
+    public Integer getIdTeacher() {
+        return idTeacher;
     }
 
-    public void setMagv(Integer magv) {
-        this.magv = magv;
+    public void setIdTeacher(Integer idTeacher) {
+        this.idTeacher = idTeacher;
     }
 
-    public String getHotengv() {
-        return hotengv;
+    public String getNameTeacher() {
+        return nameTeacher;
     }
 
-    public void setHotengv(String hotengv) {
-        this.hotengv = hotengv;
+    public void setNameTeacher(String nameTeacher) {
+        this.nameTeacher = nameTeacher;
     }
 
-    public String getTenkhoa() {
-        return tenkhoa;
+    public String getNameFaculty() {
+        return nameFaculty;
     }
 
-    public void setTenkhoa(String tenkhoa) {
-        this.tenkhoa = tenkhoa;
+    public void setNameFaculty(String nameFaculty) {
+        this.nameFaculty = nameFaculty;
     }
-
 }

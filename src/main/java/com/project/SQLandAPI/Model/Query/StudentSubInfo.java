@@ -4,52 +4,52 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class StudentSubInfo {
-    @SerializedName("masv")
+    @SerializedName("idStudent")
     @Expose
-    private Integer masv;
-    @SerializedName("hotensv")
+    private Integer idStudent;
+    @SerializedName("nameStudent")
     @Expose
-    private String hotensv;
-    @SerializedName("tuoi")
+    private String nameStudent;
+    @SerializedName("ageStudent")
     @Expose
-    private Integer tuoi;
+    private Integer ageStudent;
 
     @Override
     public String toString() {
-        return "SubSinhVienInfo{" +
-                "masv=" + masv +
-                ", hotensv='" + hotensv + '\'' +
-                ", tuoi=" + tuoi +
+        return "{" +
+                "idStudent=" + idStudent +
+                ", nameStudent='" + nameStudent + '\'' +
+                ", ageStudent=" + ageStudent +
                 '}';
     }
 
-    public Integer getMasv() {
-        return masv;
+    public Integer getIdStudent() {
+        return idStudent;
     }
 
-    public void setMasv(Integer masv) {
-        this.masv = masv;
+    public void setIdStudent(Integer idStudent) {
+        this.idStudent = idStudent;
     }
 
-    public String getHotensv() {
-        return hotensv;
+    public String getNameStudent() {
+        return nameStudent;
     }
 
-    public void setHotensv(String hotensv) {
-        this.hotensv = hotensv;
+    public void setNameStudent(String nameStudent) {
+        this.nameStudent = nameStudent;
     }
 
-    public Integer getTuoi() {
-        return tuoi;
+    public Integer getAgeStudent() {
+        return ageStudent;
     }
 
-    public void setTuoi(Integer tuoi) {
-        this.tuoi = tuoi;
+    public void setAgeStudent(Integer ageStudent) {
+        this.ageStudent = ageStudent;
     }
 
-    public StudentSubInfo(Integer masv, String hotensv, Integer tuoi) {
-        this.masv = masv;
-        this.hotensv = hotensv;
-        this.tuoi = tuoi;
+    public StudentSubInfo(Integer idStudent, String nameStudent, Integer ageStudent) {
+        this.idStudent = idStudent;
+        this.nameStudent = nameStudent;
+        this.ageStudent = ageStudent;
     }
 }

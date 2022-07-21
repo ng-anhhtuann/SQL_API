@@ -31,4 +31,12 @@ public class Error {
     public void setError(String error) {
         this.error = error;
     }
+
+    @Override
+    public String toString() {
+        return "Error{" +
+                "status=" + status +
+                ", error='" + error + '\'' +
+                '}';
+    }
 }

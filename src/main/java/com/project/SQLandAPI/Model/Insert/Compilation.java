@@ -5,65 +5,65 @@ import com.google.gson.annotations.SerializedName;
 
 public class Compilation {
 
-    @SerializedName("masv")
+    @SerializedName("idStudent")
     @Expose
-    private Integer masv;
-    @SerializedName("madt")
+    private Integer idStudent;
+    @SerializedName("idTitle")
     @Expose
-    private String madt;
-    @SerializedName("magv")
+    private String idTitle;
+    @SerializedName("idTeacher")
     @Expose
-    private Integer magv;
-    @SerializedName("ketqua")
+    private Integer idTeacher;
+    @SerializedName("result")
     @Expose
-    private Double ketqua;
+    private Double result;
 
-    public Integer getMasv() {
-        return masv;
+    public Integer getIdStudent() {
+        return idStudent;
     }
 
-    public void setMasv(Integer masv) {
-        this.masv = masv;
+    public void setIdStudent(Integer idStudent) {
+        this.idStudent = idStudent;
     }
 
-    public String getMadt() {
-        return madt;
+    public String getIdTitle() {
+        return idTitle;
     }
 
-    public void setMadt(String madt) {
-        this.madt = madt;
+    public void setIdTitle(String idTitle) {
+        this.idTitle = idTitle;
     }
 
-    public Integer getMagv() {
-        return magv;
+    public Integer getIdTeacher() {
+        return idTeacher;
     }
 
-    public void setMagv(Integer magv) {
-        this.magv = magv;
+    public void setIdTeacher(Integer idTeacher) {
+        this.idTeacher = idTeacher;
     }
 
-    public Double getKetqua() {
-        return ketqua;
+    public Double getResult() {
+        return result;
     }
 
-    public void setKetqua(Double ketqua) {
-        this.ketqua = ketqua;
+    public void setResult(Double result) {
+        this.result = result;
     }
 
     @Override
     public String toString() {
         return "HuongDan{" +
-                "masv=" + masv +
-                ", madt='" + madt + '\'' +
-                ", magv=" + magv +
-                ", ketqua=" + ketqua +
+                "idStudent=" + idStudent +
+                ", idTitle='" + idTitle + '\'' +
+                ", idTeacher=" + idTeacher +
+                ", result=" + result +
                 '}';
     }
 
-    public Compilation(Integer masv, String madt, Integer magv, Double ketqua) {
-        this.masv = masv;
-        this.madt = madt;
-        this.magv = magv;
-        this.ketqua = ketqua;
+    public Compilation(Integer idStudent, String idTitle, Integer idTeacher, Double result) {
+        this.idStudent = idStudent;
+        this.idTitle = idTitle;
+        this.idTeacher = idTeacher;
+        this.result = result;
     }
 }

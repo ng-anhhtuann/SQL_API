@@ -4,39 +4,39 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class CountFacultyName {
-    @SerializedName("tenkhoa")
+    @SerializedName("nameFaculty")
     @Expose
-    private String tenkhoa;
-    @SerializedName("soluongsv")
+    private String nameFaculty;
+    @SerializedName("numberOfStudents")
     @Expose
-    private Integer soluongsv;
+    private Integer numberOfStudents;
 
-    public String getTenkhoa() {
-        return tenkhoa;
+    public String getNameFaculty() {
+        return nameFaculty;
     }
 
-    public void setTenkhoa(String tenkhoa) {
-        this.tenkhoa = tenkhoa;
+    public void setNameFaculty(String nameFaculty) {
+        this.nameFaculty = nameFaculty;
     }
 
-    public Integer getSoluongsv() {
-        return soluongsv;
+    public Integer getNumberOfStudents() {
+        return numberOfStudents;
     }
 
-    public void setSoluongsv(Integer soluongsv) {
-        this.soluongsv = soluongsv;
+    public void setNumberOfStudents(Integer numberOfStudents) {
+        this.numberOfStudents = numberOfStudents;
     }
 
-    public CountFacultyName(String tenkhoa, Integer soluongsv) {
-        this.tenkhoa = tenkhoa;
-        this.soluongsv = soluongsv;
+    public CountFacultyName(String nameFaculty, Integer numberOfStudents) {
+        this.nameFaculty = nameFaculty;
+        this.numberOfStudents = numberOfStudents;
     }
 
     @Override
     public String toString() {
-        return "CountTenKhoa{" +
-                "tenkhoa='" + tenkhoa + '\'' +
-                ", soluongsv=" + soluongsv +
+        return "{" +
+                "nameFaculty='" + nameFaculty + '\'' +
+                ", numberOfStudents=" + numberOfStudents +
                 '}';
     }
 }

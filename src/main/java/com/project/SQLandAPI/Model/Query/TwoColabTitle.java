@@ -5,41 +5,40 @@ import com.google.gson.annotations.SerializedName;
 
 public class TwoColabTitle {
 
-    @SerializedName("madt")
+    @SerializedName("idTitle")
     @Expose
-    private Integer madt;
+    private Integer idTitle;
 
     @Override
     public String toString() {
-        return "DetaiTwoColab{" +
-                "madt=" + madt +
-                ", tendt='" + tendt + '\'' +
+        return "{" +
+                "idTitle=" + idTitle +
+                ", nameTitle='" + nameTitle + '\'' +
                 '}';
     }
 
-    public TwoColabTitle(Integer madt, String tendt) {
-        this.madt = madt;
-        this.tendt = tendt;
+    public TwoColabTitle(Integer idTitle, String nameTitle) {
+        this.idTitle = idTitle;
+        this.nameTitle = nameTitle;
     }
 
-    @SerializedName("tendt")
+    @SerializedName("nameTitle")
     @Expose
-    private String tendt;
+    private String nameTitle;
 
-    public Integer getMadt() {
-        return madt;
+    public Integer getIdTitle() {
+        return idTitle;
     }
 
-    public void setMadt(Integer madt) {
-        this.madt = madt;
+    public void setIdTitle(Integer idTitle) {
+        this.idTitle = idTitle;
     }
 
-    public String getTendt() {
-        return tendt;
+    public String getNameTitle() {
+        return nameTitle;
     }
 
-    public void setTendt(String tendt) {
-        this.tendt = tendt;
+    public void setNameTitle(String nameTitle) {
+        this.nameTitle = nameTitle;
     }
-
 }

@@ -3,52 +3,52 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Faculty {
-    @SerializedName("makhoa")
+    @SerializedName("idFaculty")
     @Expose
-    private String makhoa;
-    @SerializedName("tenkhoa")
+    private String idFaculty;
+    @SerializedName("nameFaculty")
     @Expose
-    private String tenkhoa;
-    @SerializedName("dienthoai")
+    private String nameFaculty;
+    @SerializedName("numberFaculty")
     @Expose
-    private String dienthoai;
+    private String numberFaculty;
 
-    public String getMakhoa() {
-        return makhoa;
+    public String getIdFaculty() {
+        return idFaculty;
     }
 
-    public void setMakhoa(String makhoa) {
-        this.makhoa = makhoa;
+    public void setIdFaculty(String idFaculty) {
+        this.idFaculty = idFaculty;
     }
 
-    public String getTenkhoa() {
-        return tenkhoa;
+    public String getNameFaculty() {
+        return nameFaculty;
     }
 
-    public void setTenkhoa(String tenkhoa) {
-        this.tenkhoa = tenkhoa;
+    public void setNameFaculty(String nameFaculty) {
+        this.nameFaculty = nameFaculty;
     }
 
-    public String getDienthoai() {
-        return dienthoai;
+    public String getNumberFaculty() {
+        return numberFaculty;
     }
 
-    public void setDienthoai(String dienthoai) {
-        this.dienthoai = dienthoai;
+    public void setNumberFaculty(String numberFaculty) {
+        this.numberFaculty = numberFaculty;
     }
 
     @Override
     public String toString() {
         return "Khoa{" +
-                "makhoa='" + makhoa + '\'' +
-                ", tenkhoa='" + tenkhoa + '\'' +
-                ", dienthoai='" + dienthoai + '\'' +
+                "idFaculty='" + idFaculty + '\'' +
+                ", nameFaculty='" + nameFaculty + '\'' +
+                ", numberFaculty='" + numberFaculty + '\'' +
                 '}';
     }
 
-    public Faculty(String makhoa, String tenkhoa, String dienthoai) {
-        this.makhoa = makhoa;
-        this.tenkhoa = tenkhoa;
-        this.dienthoai = dienthoai;
+    public Faculty(String idFaculty, String nameFaculty, String numberFaculty) {
+        this.idFaculty = idFaculty;
+        this.nameFaculty = nameFaculty;
+        this.numberFaculty = numberFaculty;
     }
 }

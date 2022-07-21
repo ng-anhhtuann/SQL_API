@@ -5,78 +5,78 @@ import com.google.gson.annotations.SerializedName;
 
 public class Student {
 
-    @SerializedName("masv")
+    @SerializedName("idStudent")
     @Expose
-    private Integer masv;
-    @SerializedName("hotensv")
+    private Integer idStudent;
+    @SerializedName("nameStudent")
     @Expose
-    private String hotensv;
-    @SerializedName("makhoa")
+    private String nameStudent;
+    @SerializedName("idFaculty")
     @Expose
-    private String makhoa;
-    @SerializedName("namsinh")
+    private String idFaculty;
+    @SerializedName("yearStudent")
     @Expose
-    private Integer namsinh;
-    @SerializedName("quequan")
+    private Integer yearStudent;
+    @SerializedName("addressStudent")
     @Expose
-    private String quequan;
+    private String addressStudent;
 
-    public Integer getMasv() {
-        return masv;
+    public Integer getIdStudent() {
+        return idStudent;
     }
 
-    public void setMasv(Integer masv) {
-        this.masv = masv;
+    public void setIdStudent(Integer idStudent) {
+        this.idStudent = idStudent;
     }
 
-    public String getHotensv() {
-        return hotensv;
+    public String getNameStudent() {
+        return nameStudent;
     }
 
-    public void setHotensv(String hotensv) {
-        this.hotensv = hotensv;
+    public void setNameStudent(String nameStudent) {
+        this.nameStudent = nameStudent;
     }
 
-    public String getMakhoa() {
-        return makhoa;
+    public String getIdFaculty() {
+        return idFaculty;
     }
 
-    public void setMakhoa(String makhoa) {
-        this.makhoa = makhoa;
+    public void setIdFaculty(String idFaculty) {
+        this.idFaculty = idFaculty;
     }
 
-    public Integer getNamsinh() {
-        return namsinh;
+    public Integer getYearStudent() {
+        return yearStudent;
     }
 
-    public void setNamsinh(Integer namsinh) {
-        this.namsinh = namsinh;
+    public void setYearStudent(Integer yearStudent) {
+        this.yearStudent = yearStudent;
     }
 
-    public String getQuequan() {
-        return quequan;
+    public String getAddressStudent() {
+        return addressStudent;
     }
 
-    public void setQuequan(String quequan) {
-        this.quequan = quequan;
+    public void setAddressStudent(String addressStudent) {
+        this.addressStudent = addressStudent;
     }
 
     @Override
     public String toString() {
-        return "SinhVien{" +
-                "masv=" + masv +
-                ", hotensv='" + hotensv + '\'' +
-                ", makhoa='" + makhoa + '\'' +
-                ", namsinh=" + namsinh +
-                ", quequan='" + quequan + '\'' +
+        return "{" +
+                "idStudent=" + idStudent +
+                ", nameStudent='" + nameStudent + '\'' +
+                ", idFaculty='" + idFaculty + '\'' +
+                ", yearStudent=" + yearStudent +
+                ", addressStudent='" + addressStudent + '\'' +
                 '}';
     }
 
-    public Student(Integer masv, String hotensv, String makhoa, Integer namsinh, String quequan) {
-        this.masv = masv;
-        this.hotensv = hotensv;
-        this.makhoa = makhoa;
-        this.namsinh = namsinh;
-        this.quequan = quequan;
+    public Student(Integer idStudent, String nameStudent, String idFaculty, Integer yearStudent, String addressStudent) {
+        this.idStudent = idStudent;
+        this.nameStudent = nameStudent;
+        this.idFaculty = idFaculty;
+        this.yearStudent = yearStudent;
+        this.addressStudent = addressStudent;
     }
 }

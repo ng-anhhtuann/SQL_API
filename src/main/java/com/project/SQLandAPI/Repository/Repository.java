@@ -35,8 +35,8 @@ public class Repository {
         if (faculty == null) {
             object = new Error(false, "We dont accept null information here");
         }
-        String insert = "INSERT INTO SQLAPI.Khoa(makhoa,tenkhoa,dienthoai) VALUES (?,?,?)";
-        String check = "SELECT * FROM SQLAPI.Khoa WHERE tenkhoa = '" + faculty.getTenkhoa() + "';";
+        String insert = "INSERT INTO SQLAPI.Faculty(idFaculty,nameFaculty,numberFaculty) VALUES (?,?,?)";
+        String check = "SELECT * FROM SQLAPI.Faculty WHERE nameFaculty = '" + faculty.getNameFaculty() + "';";
 
         Connection connection = DriverManager.getConnection(url, username, password);
         PreparedStatement ps = connection.prepareStatement(check);
@@ -44,11 +44,11 @@ public class Repository {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
             if (resultSet.next()) {
-                object = new Error(false, "Tenkhoa is already existed");
+                object = new Error(false, "nameFaculty is already existed");
             } else {
-                preparedStatement.setString(1, faculty.getMakhoa());
-                preparedStatement.setString(2, faculty.getTenkhoa());
-                preparedStatement.setString(3, faculty.getDienthoai());
+                preparedStatement.setString(1, faculty.getIdFaculty());
+                preparedStatement.setString(2, faculty.getNameFaculty());
+                preparedStatement.setString(3, faculty.getNumberFaculty());
                 preparedStatement.executeUpdate();
                 object = new Success(true, faculty.toString());
             }
@@ -64,18 +64,18 @@ public class Repository {
             object = new Error(false, "We dont accept null information here");
         }
         Connection connection = DriverManager.getConnection(url, username, password);
-        String insert = "INSERT INTO SQLAPI.giangVien(magv,hotengv,luong,makhoa) VALUES (?,?,?,?)";
-        String check = "SELECT * FROM SQLAPI.GiangVien WHERE magv = '" + teacher.getMagv() + "';";
+        String insert = "INSERT INTO SQLAPI.Teacher(idTeacher,nameTeacher,salaryTeacher,idFaculty) VALUES (?,?,?,?)";
+        String check = "SELECT * FROM SQLAPI.Teacher WHERE idTeacher = '" + teacher.getIdTeacher() + "';";
         PreparedStatement ps = connection.prepareStatement(check);
         ResultSet resultSet = ps.executeQuery();
         try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
             if (resultSet.next()) {
-                object = new Error(false, "Magv is already existed");
+                object = new Error(false, "idTeacher is already existed");
             } else {
-                preparedStatement.setInt(1, teacher.getMagv());
-                preparedStatement.setString(2, teacher.getHotengv());
-                preparedStatement.setDouble(3, teacher.getLuong());
-                preparedStatement.setString(4, teacher.getMakhoa());
+                preparedStatement.setInt(1, teacher.getIdTeacher());
+                preparedStatement.setString(2, teacher.getNameTeacher());
+                preparedStatement.setDouble(3, teacher.getSalaryTeacher());
+                preparedStatement.setString(4, teacher.getIdFaculty());
                 preparedStatement.executeUpdate();
                 object = new Success(true, teacher.toString());
             }
@@ -91,26 +91,26 @@ public class Repository {
             object = new Error(false, "We dont accept null information here");
         }
         Connection connection = DriverManager.getConnection(url, username, password);
-        String insert = "INSERT INTO SQLAPI.SinhVien(masv,hotensv,makhoa,namsinh,quequan) VALUES (?,?,?,?,?)";
-        String check = "SELECT * FROM SQLAPI.SinhVien WHERE masv = '" + student.getMasv() + "';";
+        String insert = "INSERT INTO SQLAPI.Student(idStudent,nameStudent,idFaculty,bornYear,addressStudent) VALUES (?,?,?,?,?)";
+        String check = "SELECT * FROM SQLAPI.Student WHERE idStudent = '" + student.getIdStudent() + "';";
         PreparedStatement ps = connection.prepareStatement(check);
         ResultSet resultSet = ps.executeQuery();
         try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
             if (resultSet.next()) {
-                object = new Error(false, "Masv is already existed");
+                object = new Error(false, "idStudent is already existed");
             } else {
-                preparedStatement.setInt(1, student.getMasv());
-                preparedStatement.setString(2, student.getHotensv());
-                preparedStatement.setString(3, student.getMakhoa());
-                preparedStatement.setInt(4, student.getNamsinh());
-                preparedStatement.setString(5, student.getQuequan());
+                preparedStatement.setInt(1, student.getIdStudent());
+                preparedStatement.setString(2, student.getNameStudent());
+                preparedStatement.setString(3, student.getIdFaculty());
+                preparedStatement.setInt(4, student.getYearStudent());
+                preparedStatement.setString(5, student.getAddressStudent());
                 preparedStatement.executeUpdate();
                 object = new Success(true, student.toString());
             }
         } catch (Exception e) {
             object = new Error(false, e.getMessage());
         }
-        return object;
+        return object.toString();
     }
 
     public Object insert(Title title) throws SQLException {
@@ -119,18 +119,18 @@ public class Repository {
             object = new Error(false, "We dont accept null information here");
         }
         Connection connection = DriverManager.getConnection(url, username, password);
-        String insert = "INSERT INTO SQLAPI.DeTai(madt,tendt,kinhphi,noithuctap) VALUES (?,?,?,?)";
-        String check = "SELECT * FROM SQLAPI.DeTai WHERE madt = '" + title.getMadt() + "';";
+        String insert = "INSERT INTO SQLAPI.Title(idTitle,nameTitle,feeTitle,siteTitle) VALUES (?,?,?,?)";
+        String check = "SELECT * FROM SQLAPI.Title WHERE idTitle = '" + title.getIdTitle() + "';";
         PreparedStatement ps = connection.prepareStatement(check);
         ResultSet resultSet = ps.executeQuery();
         try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
             if (resultSet.next()) {
-                object = new Error(false, "Madt is already existed");
+                object = new Error(false, "idTitle is already existed");
             } else {
-                preparedStatement.setString(1, title.getMadt());
-                preparedStatement.setString(2, title.getTendt());
-                preparedStatement.setInt(3, title.getKinhphi());
-                preparedStatement.setString(4, title.getNoithuctap());
+                preparedStatement.setString(1, title.getIdTitle());
+                preparedStatement.setString(2, title.getNameTitle());
+                preparedStatement.setInt(3, title.getFeeTitle());
+                preparedStatement.setString(4, title.getSiteTitle());
                 preparedStatement.executeUpdate();
                 object = new Success(true, title.toString());
             }
@@ -146,18 +146,18 @@ public class Repository {
             object = new Error(false, "We dont accept null information here");
         }
         Connection connection = DriverManager.getConnection(url, username, password);
-        String insert = "INSERT INTO SQLAPI.HuongDan(masv,madt,magv,ketqua) VALUES (?,?,?,?)";
-        String check = "SELECT * FROM SQLAPI.HuongDan WHERE masv = '" + compilation.getMasv() + "';";
+        String insert = "INSERT INTO SQLAPI.Compilation(idStudent,idTitle,idTeacher,result) VALUES (?,?,?,?)";
+        String check = "SELECT * FROM SQLAPI.Compilation WHERE idStudent = '" + compilation.getIdStudent() + "';";
         PreparedStatement ps = connection.prepareStatement(check);
         ResultSet resultSet = ps.executeQuery();
         try (PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
             if (resultSet.next()) {
-                object = new Error(false, "Masv is already existed");
+                object = new Error(false, "idStudent is already existed");
             } else {
-                preparedStatement.setInt(1, compilation.getMasv());
-                preparedStatement.setString(2, compilation.getMadt());
-                preparedStatement.setInt(3, compilation.getMagv());
-                preparedStatement.setDouble(4, compilation.getKetqua());
+                preparedStatement.setInt(1, compilation.getIdStudent());
+                preparedStatement.setString(2, compilation.getIdTitle());
+                preparedStatement.setInt(3, compilation.getIdTeacher());
+                preparedStatement.setDouble(4, compilation.getResult());
                 preparedStatement.executeUpdate();
                 object = new Success(true, compilation.toString());
             }
@@ -168,22 +168,22 @@ public class Repository {
     }
 
     /*
-    This method is to return tenkhoa, tengv, magv of GiangVien
+    This method is to return nameFaculty, nameTeacher, idTeacher of GiangVien
      */
-    public Object queryGiangVienInfo() throws SQLException {
+    public Object queryTeacherInfo() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = " SELECT magv, hotengv, tenkhoa\n" +
-                "FROM SQLAPI.GiangVien\n" +
-                "INNER JOIN SQLAPI.Khoa\n" +
-                "ON SQLAPI.Khoa.makhoa = SQLAPI.GiangVien.makhoa;";
+        String query = " SELECT idTeacher, nameTeacher, nameFaculty\n" +
+                "FROM SQLAPI.Teacher\n" +
+                "INNER JOIN SQLAPI.Faculty\n" +
+                "ON SQLAPI.Faculty.idFaculty = SQLAPI.Teacher.idFaculty;";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                TeacherInfo teacherInfo = new TeacherInfo(resultSet.getInt("magv"),
-                        resultSet.getString("hotengv"),
-                        resultSet.getString("tenkhoa"));
+                TeacherInfo teacherInfo = new TeacherInfo(resultSet.getInt("idTeacher"),
+                        resultSet.getString("nameTeacher"),
+                        resultSet.getString("nameFaculty"));
                 objectList.add(teacherInfo);
             }
             if (objectList.isEmpty()) {
@@ -197,22 +197,22 @@ public class Repository {
         return toReturn;
     }
 
-    public Object queryGiangVienInfoByCounting() throws SQLException {
+    public Object queryTeacherInfoByCounting() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "SELECT magv, hotengv, tenkhoa \n" +
-                "FROM SQLAPI.GiangVien\n" +
-                "INNER JOIN SQLAPI.Khoa\n" +
-                "ON SQLAPI.Khoa.makhoa = SQLAPI.GiangVien.makhoa\n" +
-                "WHERE SQLAPI.GiangVien.magv IN ( SELECT SQLAPI.HuongDan.magv\n " +
-                "FROM SQLAPI.HuongDan\n GROUP BY magv HAVING COUNT(DISTINCT magv) >= 3);";
+        String query = "SELECT idTeacher, nameTeacher, nameFaculty \n" +
+                "FROM SQLAPI.Teacher\n" +
+                "INNER JOIN SQLAPI.Faculty\n" +
+                "ON SQLAPI.Faculty.idFaculty = SQLAPI.Teacher.idFaculty\n" +
+                "WHERE SQLAPI.Teacher.idTeacher IN ( SELECT SQLAPI.Compilation.idTeacher\n " +
+                "FROM SQLAPI.Compilation\n GROUP BY idTeacher HAVING COUNT(DISTINCT idTeacher) >= 3);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                TeacherInfo teacherInfo = new TeacherInfo(resultSet.getInt("magv"),
-                        resultSet.getString("hotengv"),
-                        resultSet.getString("tenkhoa"));
+                TeacherInfo teacherInfo = new TeacherInfo(resultSet.getInt("idTeacher"),
+                        resultSet.getString("nameTeacher"),
+                        resultSet.getString("nameFaculty"));
                 objectList.add(teacherInfo);
             }
             if (objectList.isEmpty()) {
@@ -226,23 +226,23 @@ public class Repository {
         return toReturn;
     }
 
-    public Object querySinhVienNoPoints() throws SQLException {
+    public Object queryStudentNoPoints() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "SELECT masv, hotensv, makhoa, namsinh, quequan\n" +
-                "FROM SQLAPI.SinhVien\n" +
-                "JOIN SQLAPI.HuongDan\n" +
-                "USING (masv)\n" +
-                "WHERE SQLAPI.SinhVien.masv IN ( SELECT  SQLAPI.HuongDan.masv FROM SQLAPI.HuongDan WHERE ketqua IS NULL OR ketqua ='');";
+        String query = "SELECT idStudent, nameStudent, idFaculty, bornYear, addressStudent\n" +
+                "FROM SQLAPI.Student\n" +
+                "JOIN SQLAPI.Compilation\n" +
+                "USING (idStudent)\n" +
+                "WHERE SQLAPI.Student.idStudent IN ( SELECT  SQLAPI.Compilation.idStudent FROM SQLAPI.Compilation WHERE result IS NULL OR result ='');";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Student student = new Student(resultSet.getInt("masv")
-                        , resultSet.getString("hotensv")
-                        , resultSet.getString("makhoa")
-                        , resultSet.getInt("namsinh")
-                        , resultSet.getString("quequan"));
+                Student student = new Student(resultSet.getInt("idStudent")
+                        , resultSet.getString("nameStudent")
+                        , resultSet.getString("idFaculty")
+                        , resultSet.getInt("bornYear")
+                        , resultSet.getString("addressStudent"));
                 objectList.add(student);
             }
             if (objectList.isEmpty()) {
@@ -258,21 +258,21 @@ public class Repository {
 
     public Object getNumber() throws SQLException {
         Object toReturn = null;
-        String sodienthoai = null;
+        String sonumberFaculty = null;
         Connection connection = DriverManager.getConnection(url, username, password);
-        String query = "SELECT dienthoai\n" +
-                "FROM SQLAPI.Khoa AS A \n" +
-                "INNER JOIN SQLAPI.SinhVien AS B\n" +
-                "ON A.makhoa = B.makhoa AND B.hotensv = 'Phan Thi E';";
+        String query = "SELECT numberFaculty\n" +
+                "FROM SQLAPI.Faculty AS A \n" +
+                "INNER JOIN SQLAPI.Student AS B\n" +
+                "ON A.idFaculty = B.idFaculty AND B.nameStudent = 'Phan Thi E';";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                sodienthoai = "" + resultSet.getString("dienthoai");
+                sonumberFaculty = "" + resultSet.getString("numberFaculty");
             }
-            if (sodienthoai.isEmpty()) {
+            if (sonumberFaculty.isEmpty()) {
                 toReturn = new Error(false, "There is no one name Phan Thi E at all");
             } else {
-                toReturn = new Success(true, "" + sodienthoai);
+                toReturn = new Success(true, "" + sonumberFaculty);
             }
         } catch (Exception e) {
             toReturn = new Error(false, e.getMessage());
@@ -280,19 +280,19 @@ public class Repository {
         return toReturn;
     }
 
-    public Object queryDeTaiInfoHavingTwoColab() throws SQLException {
+    public Object queryTitleInfoHavingTwoColab() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "SELECT madt, tendt\n" +
-                "FROM SQLAPI.DeTai AS A\n" +
-                "JOIN SQLAPI.HuongDan AS B USING (madt)\n" +
-                "WHERE madt IN (SELECT madt \n" +
-                "FROM SQLAPI.HuongDan GROUP BY madt HAVING COUNT(distinct madt) >2);\n";
+        String query = "SELECT idTitle, nameTitle\n" +
+                "FROM SQLAPI.Title AS A\n" +
+                "JOIN SQLAPI.Compilation AS B USING (idTitle)\n" +
+                "WHERE idTitle IN (SELECT idTitle \n" +
+                "FROM SQLAPI.Compilation GROUP BY idTitle HAVING COUNT(distinct idTitle) >2);\n";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                TwoColabTitle twoColabTitle = new TwoColabTitle(resultSet.getInt("madt"), resultSet.getString("tendt"));
+                TwoColabTitle twoColabTitle = new TwoColabTitle(resultSet.getInt("idTitle"), resultSet.getString("nameTitle"));
                 objectList.add(twoColabTitle);
             }
             if (objectList.isEmpty()) {
@@ -306,17 +306,17 @@ public class Repository {
         return toReturn;
     }
 
-    public Object queryMaxKinhPhiInfo() throws SQLException {
+    public Object queryMaxFeeInfo() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "select madt, tendt\n" +
-                "from SQLAPI.DeTai\n" +
-                "order by kinhphi desc limit 0,1;\n";
+        String query = "select idTitle, nameTitle\n" +
+                "from SQLAPI.Title\n" +
+                "order by feeTitle desc limit 0,1;\n";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                MaxWorthTitle detai = new MaxWorthTitle(resultSet.getString("madt"), resultSet.getString("tendt"));
+                MaxWorthTitle detai = new MaxWorthTitle(resultSet.getString("idTitle"), resultSet.getString("nameTitle"));
                 objectList.add(detai);
             }
             if (objectList.isEmpty()) {
@@ -330,18 +330,18 @@ public class Repository {
         return toReturn;
     }
 
-    public Object queryCountTenKhoa() throws SQLException {
+    public Object queryCountNameFaculty() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "select tenkhoa, count(distinct SQLAPI.SinhVien.makhoa) as \"soluongsv\"\n" +
-                "from SQLAPI.Khoa \n" +
-                "join SQLAPI.SinhVien using(makhoa)\n" +
-                "group by makhoa;";
+        String query = "select nameFaculty, count(distinct SQLAPI.Student.idFaculty) as \"sosalaryTeachersv\"\n" +
+                "from SQLAPI.Faculty \n" +
+                "join SQLAPI.Student using(idFaculty)\n" +
+                "group by idFaculty;";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                CountFacultyName countFacultyName = new CountFacultyName(resultSet.getString("tenkhoa"), resultSet.getInt("soluongsv"));
+                CountFacultyName countFacultyName = new CountFacultyName(resultSet.getString("nameFaculty"), resultSet.getInt("sosalaryTeachersv"));
                 objectList.add(countFacultyName);
             }
             if (objectList.isEmpty()) {
@@ -355,18 +355,18 @@ public class Repository {
         return toReturn;
     }
 
-    public Object queryMaTenDiem() throws SQLException {
+    public Object queryIdNamePoint() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "select a.masv, a.hotensv, b.ketqua\n" +
-                "from SQLAPI.SinhVien as a\n" +
-                "join SQLAPI.HuongDan as b using(masv)\n" +
-                "where a.makhoa = 'VLHN' or a.makhoa = 'IT';";
+        String query = "select a.idStudent, a.nameStudent, b.result\n" +
+                "from SQLAPI.Student as a\n" +
+                "join SQLAPI.Compilation as b using(idStudent)\n" +
+                "where a.idFaculty = 'VLHN' or a.idFaculty = 'IT';";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                StudentIdNamePoint studentIdNamePoint = new StudentIdNamePoint(resultSet.getInt("masv"), resultSet.getString("hotensv"), resultSet.getDouble("ketqua"));
+                StudentIdNamePoint studentIdNamePoint = new StudentIdNamePoint(resultSet.getInt("idStudent"), resultSet.getString("nameStudent"), resultSet.getDouble("result"));
                 objectList.add(studentIdNamePoint);
             }
             if (objectList.isEmpty()) {
@@ -380,17 +380,17 @@ public class Repository {
         return toReturn;
     }
 
-    public Object querySinhVienInfo() throws SQLException {
+    public Object queryStudentInfo() throws SQLException {
         Object toReturn = null;
         Connection connection = DriverManager.getConnection(url, username, password);
         List<Object> objectList = new ArrayList<>();
-        String query = "select masv, hotensv, (2022-namsinh) as tuoi\n" +
-                "from SQLAPI.SinhVien\n" +
-                "where makhoa = 'DTV';";
+        String query = "select idStudent, nameStudent, (2022-bornYear) as tuoi\n" +
+                "from SQLAPI.Student\n" +
+                "where idFaculty = 'DTV';";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                StudentSubInfo sinhVienInfo = new StudentSubInfo(resultSet.getInt("masv"), resultSet.getString("hotensv"), resultSet.getInt("tuoi"));
+                StudentSubInfo sinhVienInfo = new StudentSubInfo(resultSet.getInt("idStudent"), resultSet.getString("nameStudent"), resultSet.getInt("tuoi"));
                 objectList.add(sinhVienInfo);
             }
             if (objectList.isEmpty()) {

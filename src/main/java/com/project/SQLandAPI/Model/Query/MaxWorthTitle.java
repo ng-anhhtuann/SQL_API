@@ -6,37 +6,37 @@ import com.google.gson.annotations.SerializedName;
 public class MaxWorthTitle {
     @Override
     public String toString() {
-        return "DeTaiMaxKinhPhi{" +
-                "madt='" + madt + '\'' +
-                ", tendt='" + tendt + '\'' +
+        return "{" +
+                "idTitle='" + idTitle + '\'' +
+                ", nameTitle='" + nameTitle + '\'' +
                 '}';
     }
 
-    @SerializedName("madt")
+    @SerializedName("idTitle")
     @Expose
-    private String madt;
-    @SerializedName("tendt")
+    private String idTitle;
+    @SerializedName("nameTitle")
     @Expose
-    private String tendt;
+    private String nameTitle;
 
-    public String getMadt() {
-        return madt;
+    public String getIdTitle() {
+        return idTitle;
     }
 
-    public void setMadt(String madt) {
-        this.madt = madt;
+    public void setIdTitle(String idTitle) {
+        this.idTitle = idTitle;
     }
 
-    public String getTendt() {
-        return tendt;
+    public String getNameTitle() {
+        return nameTitle;
     }
 
-    public void setTendt(String tendt) {
-        this.tendt = tendt;
+    public void setNameTitle(String nameTitle) {
+        this.nameTitle = nameTitle;
     }
 
-    public MaxWorthTitle(String madt, String tendt) {
-        this.madt = madt;
-        this.tendt = tendt;
+    public MaxWorthTitle(String idTitle, String nameTitle) {
+        this.idTitle = idTitle;
+        this.nameTitle = nameTitle;
     }
 }
